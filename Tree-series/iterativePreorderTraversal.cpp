@@ -54,3 +54,4 @@ signed main(){
 
 
 }
+//the time complexity is O(n) and space complexity is O(n);
