@@ -34,12 +34,12 @@ vt<int>getinorder(TreeNode*root){
             }
             if(prev->right==nullptr){
                 prev->right=curr;
-                
+                //in preorder just one change   inorder.push_back(curr->data);
                 curr=curr->left;
             }
-            else{
+            else{//means thread is present here
                 prev->right=nullptr;
-                inorder.push_back(curr->data);
+                inorder.push_back(curr->data);//not here in preorder traversal using morris traversal
                 curr=curr->right;
             }
         }
@@ -56,4 +56,9 @@ signed main(){
     root->right->right=new TreeNode(7);
     root->right->right->left=new TreeNode(8);
     vt<int>ans=getinorder(root);
+    for(auto it:ans){
+        cout<<it<<" ";
+    }
+    cout<<endl;
 }
+//the time complexity is O(n) and space complexity is O(1)
