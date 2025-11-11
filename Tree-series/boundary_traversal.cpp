@@ -20,6 +20,7 @@ class TreeNode{
 
 };
 bool isleaf(TreeNode*root){
+    if (root == nullptr) return false;
     return (!root->left)&& (!root->right);
 
 }
@@ -34,19 +35,20 @@ void addleftboundary(TreeNode*root,vt<int>&res){
 
 }
 void addrightboundary(TreeNode*root,vt<int>&res){
-    TreeNode*curr=curr->right;
+    TreeNode*curr=root->right;
     vt<int>temp;
     while(curr){
-        if(!isleaf)temp.push_back(curr->data);
+        if(!isleaf(curr))temp.push_back(curr->data);
         if(curr->right)curr=curr->right;
         else curr=curr->left;
     }
-    for(int i=temp.size()-1;i>=0;i--){
+    for(int i=(int)temp.size()-1;i>=0;i--){
         res.push_back(temp[i]);
     }
 
 }
 void addleaves(TreeNode*root,vt<int>&res){//inorder traversal
+    if (!root) return;
     if(isleaf(root)){
         res.push_back(root->data);
         return ;
@@ -63,8 +65,9 @@ vt<int>boundarytraversal(TreeNode*root){
     if(!isleaf(root))res.push_back(root->data);
 
     addleftboundary(root,res);
-    addrightboundary(root,res);
     addleaves(root,res);
+    addrightboundary(root,res);
+    
     return res;
 }
 
