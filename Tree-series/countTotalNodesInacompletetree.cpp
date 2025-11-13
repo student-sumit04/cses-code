@@ -68,4 +68,5 @@ signed main(){
 
 // But missing nodes can only appear on the right side, never in the middle.
 
-// the time complexity is O(n) and space complexity is O(h);
+// the time complexity is O(n) and space complexity is O(h);// this is for the brute force 
+// the time complexity is O((log n)*(log n)) and space complexity is O(log n);
