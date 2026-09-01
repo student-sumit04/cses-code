@@ -58,5 +58,16 @@ void kmpsearch(string text,string pattern){
 
 }//the time complexity is the O(n+m);
 int main(){
-
+    string text, pattern;
+    
+    cout << "Enter the text: ";
+    getline(cin, text);
+    
+    cout << "Enter the pattern to search: ";
+    getline(cin, pattern);
+    
+    cout << "\nSearching for pattern \"" << pattern << "\" in text \"" << text << "\"" << endl;
+    kmpsearch(text, pattern);
+    
+    return 0;
 }
